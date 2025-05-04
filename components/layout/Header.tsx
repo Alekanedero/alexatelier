@@ -4,52 +4,39 @@ import Link from "next/link";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { Typography } from "../ui/typography";
 
-// import Image from "next/image";
-// import { AuthButton } from "@/features/auth/AuthButton";
-
 export function Header() {
   return (
-    <header className="bg-background top-0 z-40 w-full border-b">
-      <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
-        <div className="flex gap-2 item-center">
-          {/* <Image src="/images/logo.svg" alt="app logo" width={50} height={50} /> */}
-        </div>
-        <div className="flex justify-center items-baseline gap-2 pl-4">
-          <Typography variant="h3" as={Link} href="/">
-            {SiteConfig.title}
+    <header className="z-100 fixed w-full border-b bg-background">
+      <div className="flex flex-col sm:flex-row h-16 items-center justify-center sm:justify-between w-full px-4">
+        <Typography variant="h3" as={Link} href="/" className="hidden sm:block">
+          {SiteConfig.title}
+        </Typography>
+        <div className="flex gap-4 items-center">
+          <Typography
+            variant="link"
+            as={Link}
+            href="/"
+            className="text-muted-foreground hover:text-foreground"
+          >
+            Présentation
           </Typography>
-          <div className="flex gap-4 ml-6">
-            <Typography
-              variant="link"
-              as={Link}
-              href="/"
-              className="text-muted-foreground hover:text-foreground"
-            >
-              Portefolio
-            </Typography>
-            <Typography
-              variant="link"
-              as={Link}
-              href="/explorer"
-              className="text-muted-foreground hover:text-foreground"
-            >
-              Explorer
-            </Typography>
-            <Typography
-              variant="link"
-              as={Link}
-              href="/courses"
-              className="text-muted-foreground hover:text-foreground"
-            >
-              Courses
-            </Typography>
-          </div>
-        </div>
-        <div className="flex flex-1 items-center justify-end space-x-4">
-          <nav className="flex items-center space-x-1">
-            {/* <AuthButton /> */}
-            <ThemeToggle />
-          </nav>
+          <Typography
+            variant="link"
+            as={Link}
+            href="/experience"
+            className="text-muted-foreground hover:text-foreground"
+          >
+            Expérience
+          </Typography>
+          <Typography
+            variant="link"
+            as={Link}
+            href="/contact"
+            className="text-muted-foreground hover:text-foreground"
+          >
+            Contact
+          </Typography>
+          <ThemeToggle className="h-8 w-8" />
         </div>
       </div>
     </header>

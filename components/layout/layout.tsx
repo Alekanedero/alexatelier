@@ -7,7 +7,7 @@ export const Layout = (props: ComponentPropsWithoutRef<"div">) => {
     <div
       {...props}
       className={cn(
-        "max-w-3xl flex-wrap w-full flex gap-4 m-auto px-4 mt-4",
+        "max-w-5xl flex-col w-full flex gap-4 m-auto px-4 mt-4",
         props.className
       )}
     />
@@ -18,14 +18,20 @@ export const LayoutHeader = (props: ComponentPropsWithoutRef<"div">) => {
     <div
       {...props}
       className={cn(
-        "flex items-start gap-1 flex-col w-full md:flex-1 min-w-[200px]",
+        "flex mt-10 items-start gap-1 flex-col w-full md:flex-1 min-w-[200px]",
         props.className
       )}
     />
   );
 };
 export const LayoutTitle = (props: ComponentPropsWithoutRef<"h1">) => {
-  return <Typography {...props} variant="h2" className={cn(props.className)} />;
+  return (
+    <Typography
+      {...props}
+      variant="h1"
+      className={cn(props.className, "border-b-0")}
+    />
+  );
 };
 export const LayoutDescription = (props: ComponentPropsWithoutRef<"p">) => {
   return <Typography {...props} className={cn(props.className)} />;
