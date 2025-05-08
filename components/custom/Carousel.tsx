@@ -34,7 +34,7 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({
     <Carousel
       opts={{ align }}
       className={`w-${maxWidth}`}
-      plugins={[Autoplay({ delay: 4000 })]}
+      // plugins={[Autoplay({ delay: 4000 })]}
     >
       <CarouselContent>
         {images.map((image) => (
